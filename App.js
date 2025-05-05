@@ -1,14 +1,16 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View,Button,Alert } from 'react-native';
 
 export default function App() {
   let Hola= 1
   return (
     <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
       <Text>{Hola}</Text>
-      
-      <StatusBar style="auto" />
+      <Button
+onPress={() => Alert.alert(`cantidad: ${Hola+1}`)}  title="Sumar uno"
+/>    
+
+  <StatusBar style="auto" />
     </View>
   );
 }
