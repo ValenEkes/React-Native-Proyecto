@@ -1,19 +1,30 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View,Button,Alert } from 'react-native';
+import { useState } from 'react';
+import { StyleSheet, Text, View,Button,Alert, TouchableOpacity,ImageBackground } from 'react-native';
+let Hola= 1
+let imgExterna={uri: 'https://www.lifeder.com/wp-content/uploads/2019/12/matematicas-concepto-lifeder-min-696x464.jpg'}
 
-export default function App() {
-  let Hola= 1
+const App2=()=>{
+    const[count,setCount]=useState(1)
+    const Contador=()=>setCount(count+1)
+  
   return (
     <View style={styles.container}>
-      <Text>{Hola}</Text>
-      <Button
-onPress={() => Alert.alert(`cantidad: ${Hola+1}`)}  title="Sumar uno"
-/>    
+      <ImageBackground
+      source={imgExterna}
+      resizeMode='cover'
+      style= {styles.backgroundImage}></ImageBackground>
+      <Text  style={styles.text}>  Contador: {count}</Text>
+      <TouchableOpacity onPress={Contador}>  
+      <Text>Presionar</Text>
+      </TouchableOpacity>
+      
 
   <StatusBar style="auto" />
     </View>
   );
-}
+};
+export default App2
 
 const styles = StyleSheet.create({
   container: {
@@ -22,4 +33,10 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
+  text:{
+    fontWeight:'bold',
+    fontFamily:'Cochin'
+  },
 });
+
+
