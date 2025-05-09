@@ -9,19 +9,20 @@ const App2=()=>{
     const Contador=()=>setCount(count+1)
   
   return (
-    <View style={styles.container}>
+    //<View style={styles.container}>
       <ImageBackground
       source={imgExterna}
       resizeMode='cover'
-      style= {styles.backgroundImage}></ImageBackground>
+      style= {styles.container}>
       <Text  style={styles.text}>  Contador: {count}</Text>
       <TouchableOpacity onPress={Contador}>  
-      <Text>Presionar</Text>
+      <Text style={styles.text}>Presionar</Text>
       </TouchableOpacity>
       
 
   <StatusBar style="auto" />
-    </View>
+  </ImageBackground>
+   // </View>
   );
 };
 export default App2
@@ -35,7 +36,8 @@ const styles = StyleSheet.create({
   },
   text:{
     fontWeight:'bold',
-    fontFamily:'Cochin'
+    fontFamily:'Cochin',
+    color:'blue'
   },
 });
 
